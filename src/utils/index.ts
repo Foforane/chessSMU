@@ -17,9 +17,9 @@ export  const getData = async () => {
     for await (const item of details) {
     count++;
    
-    if(count === 8 ){
+    if(count === 20 ){
       count = 0;
-    await new Promise(resolve => setTimeout(resolve, 1200));
+    await new Promise(resolve => setTimeout(resolve, 500));
     }
     let detail : Chess ; 
     //const data = await getRating('cyberT')
