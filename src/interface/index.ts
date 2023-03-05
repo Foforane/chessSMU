@@ -1,7 +1,7 @@
 export interface Chess {
     surname : string;
     name : string;
-    phoneNumber : number;
+    phoneNumber : string;
     blitz : number;
     bullet : number;
     rapid : number;
