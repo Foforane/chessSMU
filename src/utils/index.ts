@@ -24,7 +24,7 @@ export  const getData = async () => {
       userName: item.userName,
       surname : item.surname,
       name: item.name,
-      gender:item.Gender,
+      gender:item.gender,
       phoneNumber : item.phoneNumber,
       blitz : blitz,
       rapid :rapid,

@@ -1,23 +1,10 @@
 [
     {
-      "userName": "cyberT",
+      "Timestamp": "3/5/2023 4:38:49",
       "name": "Thakgalang",
       "surname": "Foforane",
-      "phoneNumber": 794815914,
-      "Gender": "Male"
-    },
-    {
-        "userName": "Ntokozoking",
-        "name": "Thakgalang",
-        "surname": "Foforane",
-        "phoneNumber": 794815914,
-        "Gender": "Male"
-      },
-      {
-        "userName": "MFANASakolimpopobotl",
-        "name": "Thakgalang",
-        "surname": "Foforane",
-        "phoneNumber": 794815914,
-        "Gender": "Male"
-      }
-]
+      "userName": "cyberT",
+      "gender": "Male",
+      "phoneNumber": 794815914
+    }
+   ]

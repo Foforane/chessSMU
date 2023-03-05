@@ -1,6 +1,9 @@
 import React from "react";
 import ChessTable from "./components/table";
-import AppLayOut from '@cloudscape-design/components/app-layout'
+import AppLayOut from '@cloudscape-design/components/app-layout';
+import Container from '@cloudscape-design/components/container';
+import Box from '@cloudscape-design/components/box';
+import Header from '@cloudscape-design/components/header';
 
 function App() {
  
@@ -10,6 +13,7 @@ function App() {
     toolsHide 
     navigationHide
     content = {<ChessTable/>}
+    
     />
   )
 }
