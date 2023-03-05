@@ -12,17 +12,10 @@ return await fetch('https://lichess.org/api/user/'+userName).then(async data =>
 
 
 export  const getData = async () => {
-   let count = 0 ;
+   
     const items : Chess[] = Array();
     for await (const item of details) {
-    count++;
-   
-    if(count === 20 ){
-      count = 0;
-    await new Promise(resolve => setTimeout(resolve, 500));
-    }
     let detail : Chess ; 
-    //const data = await getRating('cyberT')
     let blitz = 0 , bullet = 0 ,rapid = 0;
     const data = await getRating(item.userName);
     if(data !== undefined){
