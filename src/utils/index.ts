@@ -4,8 +4,9 @@ import details from '../details/details.json';
 const getRating = async (userName : string) => {
 return await fetch('https://lichess.org/api/user/'+userName).then(async data =>
  {
- const ratings = await data.json()
- return await ratings['perfs'];
+ const ratings = await data.json();
+ if(ratings['error']) return;
+ return await ratings; 
 })
 }
 
@@ -15,10 +16,14 @@ export  const getData = async () => {
     for await (const item of details) {
     let detail : Chess ; 
     //const data = await getRating('cyberT')
+    let blitz = 0 , bullet = 0 ,rapid = 0;
     const data = await getRating(item.userName);
-    const blitz : number = data['blitz']['rating'];
-    const bullet : number = data['bullet']['rating'];
-    const rapid : number = data['rapid']['rating']
+    if(data !== undefined){
+     blitz  =  data['perfs']['blitz']['rating'];
+     bullet = data['perfs']['bullet']['rating'];
+     rapid  =  data['perfs']['rapid']['rating'] ;
+    }
+
     detail = {
       rank : 1,
       userName: item.userName,
