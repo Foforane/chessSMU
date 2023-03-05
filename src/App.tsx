@@ -1,13 +1,16 @@
-import { useState } from 'react'
-
+import React from "react";
+import ChessTable from "./components/table";
+import AppLayOut from '@cloudscape-design/components/app-layout'
 
 function App() {
  
 
   return (
-    <div>
-      Hello
-    </div>
+    <AppLayOut
+    toolsHide 
+    navigationHide
+    content = {<ChessTable/>}
+    />
   )
 }
 
