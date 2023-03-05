@@ -2,9 +2,9 @@ import React, { useEffect, useState } from "react";
 import Table from '@cloudscape-design/components/table'
 import Box from "@cloudscape-design/components/box";
 import TableHeader from './header';
-import { Chess } from "../interface";
-import { getData } from "../utils";
-import { columnDefinitions } from "../utils/table-config";
+import { Chess } from "../../interface";
+import { getData } from "../../utils";
+import { columnDefinitions } from "../../utils/table-config";
 
 
 function ChessTable(){
@@ -26,6 +26,7 @@ function ChessTable(){
     items={data}
     selectionType = 'multi'
     trackBy='userName'    
+    
     loading = {loading}
     loadingText = 'Loading Rankings' 
     header = {<TableHeader/>}
