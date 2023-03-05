@@ -230,6 +230,30 @@
       "name": "Njabulo",
       "phoneNumber": "8233398933",
       "gender": "Male"
+    },
+    {
+      "Timestamp": "3/5/2023 15:07:33",
+      "name": "Faith",
+      "surname": "Manganye ",
+      "userName": "Faithkhen",
+      "gender": "Female",
+      "phoneNumber": "717793569"
+    },
+    {
+      "Timestamp": "3/5/2023 15:37:33",
+      "name": "Sthembiso Austin ",
+      "surname": "Chabalala",
+      "userName": "ChabSA",
+      "gender": "Male",
+      "phoneNumber": "790814582"
+    },
+    {
+      "Timestamp": "3/5/2023 15:58:57",
+      "name": "Mulalo",
+      "surname": "Nkhumeleni",
+      "userName": "Mulalo",
+      "gender": "Female",
+      "phoneNumber": "643417094"
     }
 
  ]
