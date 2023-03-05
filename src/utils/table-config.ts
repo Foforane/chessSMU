@@ -1,6 +1,13 @@
 import React from "react";
 import { Chess } from "../interface";
 import { TableProps } from "@cloudscape-design/components/table";
+
+export const paginationLabels = {
+    nextPageLabel: 'Next page',
+    pageLabel: (pageNumber : number) => `Go to page ${pageNumber}`,
+    previousPageLabel: 'Previous page',
+  };
+
 export const columnDefinitions : TableProps.ColumnDefinition<Chess>[] = [
    
     {
