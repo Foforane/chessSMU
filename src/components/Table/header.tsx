@@ -7,9 +7,9 @@ export default () => {
   return (
     <Header
       variant="h2"
-      description = 'See how you rank against other SMU Player'
+      description = 'See how you rank against other SMU Players'
       actions={
-        <SpaceBetween direction="horizontal" size="xs">
+        <SpaceBetween direction="horizontal" size='m'>
           <Button disabled>Compare Players</Button>
           <Button disabled variant="primary">
             View Detailed Info
