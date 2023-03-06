@@ -44,7 +44,7 @@ function ChessTable(){
     pagination={<Pagination {...paginationProps} ariaLabels={paginationLabels}  />}
     loading = {loading}
     loadingText = 'Loading Rankings' 
-    header = {<TableHeader/>}
+    header = {<TableHeader data={data}/>}
     />
     </>
 }

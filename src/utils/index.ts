@@ -1,4 +1,4 @@
-import { Chess } from '../interface';
+import { Chess, rating } from '../interface';
 import details from '../details/details.json';
 
 const getRating = async (userName : string) => {
@@ -16,10 +16,11 @@ export  const getData = async () => {
     const items : Chess[] = Array();
     for await (const item of details) {
     let detail : Chess ; 
-    let blitz = 0 , bullet = 0 ,rapid = 0;
+    let blitz : rating = {rating : 0,prog : 0, games : 0}
+    let  bullet = 0 ,rapid = 0;
     const data = await getRating(item.userName);
     if(data !== undefined){
-     blitz  =  data['perfs']['blitz']['rating'];
+     blitz  =  data['perfs']['blitz'];
      bullet = data['perfs']['bullet']['rating'];
      rapid  =  data['perfs']['rapid']['rating'] ;
     }
@@ -37,7 +38,7 @@ export  const getData = async () => {
     }  
     items.push(detail);
 }
-items.sort((a,b)=> b.blitz - a.blitz);
+items.sort((a,b)=> b.blitz.rating - a.blitz.rating);
 let rank = 0;
 const newItems = items.map(item => {
   ++rank;

@@ -32,7 +32,7 @@ export const columnDefinitions : TableProps.ColumnDefinition<Chess>[] = [
     id:'blitz',
     header : 'Blitz',
     width : 50,
-    cell : item => item.blitz
+    cell : item => item.blitz.rating
 },
 {
     id:'bullet',
