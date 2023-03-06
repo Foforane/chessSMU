@@ -8,7 +8,7 @@ import statusIndicator from '@cloudscape-design/components/status-indicator';
 import Container from '@cloudscape-design/components/container';
 import {useLocation,useNavigate} from 'react-router-dom';
 import { Chess } from "../../interface";
-import { Link } from "@cloudscape-design/components";
+import { Link, SpaceBetween } from "@cloudscape-design/components";
 function Stats(){
 const navigate = useNavigate();
 useEffect(()=>{
@@ -25,9 +25,14 @@ useEffect(()=>{
 const femaleData : Chess[] =Chessdata.filter(item => item.gender === 'Female') 
  const Females : number = femaleData.length;
  const males : number = (Chessdata.filter(item => item.gender === 'Male')).length;
- const highestRating : Chess = Chessdata[0];
- 
- let highestFemaleRating : Chess = Chessdata[0];
+ let highestRating : Chess = Chessdata[0];
+ for(const highRating of Chessdata){
+    if(highRating.blitz.games>30){
+        highestRating = highRating;
+        break;
+    }
+}
+ let highestFemaleRating : Chess = femaleData[0];
 for(const FemaleRating of femaleData){
     if(FemaleRating.blitz.games>30){
         highestFemaleRating = FemaleRating;
@@ -38,7 +43,20 @@ for(const FemaleRating of femaleData){
  
 return <>
 <Container
-header = {<Box variant="h1">Stats</Box>}
+header = {<Header
+    variant="h2"
+    description = 'See how you rank against other SMU Players'
+    actions={
+      <SpaceBetween direction="horizontal" size='m'>
+        <Button onClick={()=>{
+            navigate('/')
+        }} variant="primary">Go Back</Button>
+      </SpaceBetween>
+    }
+
+  >
+    SMU Chess
+  </Header>}
 footer ={<Box textAlign='center'>
 SMU Lichess &copy; {new Date().getFullYear()}
 </Box>}
