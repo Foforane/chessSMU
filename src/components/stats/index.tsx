@@ -4,7 +4,7 @@ import Box from "@cloudscape-design/components/box";
 import Cards from "@cloudscape-design/components/cards";
 import Button from "@cloudscape-design/components/button";
 import Header from "@cloudscape-design/components/header";
-
+import statusIndicator from '@cloudscape-design/components/status-indicator';
 import Container from '@cloudscape-design/components/container';
 import {useLocation,useNavigate} from 'react-router-dom';
 import { Chess } from "../../interface";
@@ -127,6 +127,11 @@ SMU Lichess &copy; {new Date().getFullYear()}
             content: item => item.games
           },
           {
+            id: "gain",
+            header: "Current progress",
+            content: item => <Box color={item.prog > 0 ? 'text-status-success' : 'text-status-error'}>{item.prog} Points</Box>
+          },
+          {
             id: "challenge",
             header: "Request Challenge",
             content: item => <Link external href={`https://lichess.org/${item.username}`}>Challenge {item.name}</Link>
@@ -140,6 +145,7 @@ SMU Lichess &copy; {new Date().getFullYear()}
           username: highestRating.userName,
           Rating : highestRating.blitz.rating,
           games : highestRating.blitz.games,
+          prog : highestRating.blitz.prog
         }, 
         {
             title: "Best Female Player",
@@ -147,6 +153,7 @@ SMU Lichess &copy; {new Date().getFullYear()}
             username: highestFemaleRating.userName,
             Rating : highestFemaleRating.blitz.rating,
             games : highestFemaleRating.blitz.games,
+            prog : highestFemaleRating.blitz.prog
             
           }, 
       
