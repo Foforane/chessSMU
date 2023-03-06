@@ -26,8 +26,16 @@ const femaleData : Chess[] =Chessdata.filter(item => item.gender === 'Female')
  const Females : number = femaleData.length;
  const males : number = (Chessdata.filter(item => item.gender === 'Male')).length;
  const highestRating : Chess = Chessdata[0];
- const highestFemaleRating : Chess = femaleData[0]
+ 
+ let highestFemaleRating : Chess = Chessdata[0];
+for(const FemaleRating of femaleData){
+    if(FemaleRating.blitz.games>30){
+        highestFemaleRating = FemaleRating;
+        break;
+    }
+}
 
+ 
 return <>
 <Container
 header = {<Box variant="h1">Stats</Box>}
