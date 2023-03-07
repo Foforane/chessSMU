@@ -53,14 +53,6 @@ export const columnDefinitions : TableProps.ColumnDefinition<Chess>[] = [
     cell : item => item.gender
 },
 {
-    id:'phoneNumber',
-    header : 'Phone Number',
-    width : 70,
-    cell : item => {
-        
-       return "+27"+ item.phoneNumber}
-},
-{
     id:'UserName',
     header : 'Username',
     width : 70,
